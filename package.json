@@ -1,0 +1,42 @@
+{
+  "name": "desafio-backend-modulo-05-sistema-pdv-b2b-ifood-t08",
+  "version": "1.0.0",
+  "description": "![](https://i.imgur.com/xG74tOh.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index.js",
+    "start": "node ./src/index.js",
+    "knex:rollback-all": "knex --knexfile ./src/database/knex/Environment.js migrate:rollback --all",
+    "knex:rollback": "knex --knexfile ./src/database/knex/Environment.js migrate:rollback",
+    "knex:migrate-latest": "knex --knexfile ./src/database/knex/Environment.js migrate:latest",
+    "knex:migrate-next": "knex --knexfile ./src/database/knex/Environment.js migrate:up",
+    "knex:migrate-make": "knex --knexfile ./src/database/knex/Environment.js migrate:make atualizar_produtos",
+    "knex:seed-make": "knex --knexfile ./src/database/knex/Environment.js seed:make categorias",
+    "knex:seed-run": "knex --knexfile ./src/database/knex/Environment.js seed:run",
+    "knex:preparar": "npm run knex:migrate-latest && npm run knex:seed-run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.454.0",
+    "@aws-sdk/lib-storage": "^3.454.0",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "handlebars": "^4.7.8",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.0.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.7",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "sqlite3": "^5.1.6"
+  }
+}
